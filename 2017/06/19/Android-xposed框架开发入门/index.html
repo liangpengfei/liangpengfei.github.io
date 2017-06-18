@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Android,Xposed," />
 
 
 
@@ -95,15 +95,21 @@
 
 
 
-<meta name="description" content="爱折腾的Android攻城狮">
-<meta property="og:type" content="website">
-<meta property="og:title" content="被你发现啦 ^_^">
-<meta property="og:url" content="http://yoursite.com/tags/Android/index.html">
+<meta name="description" content="近期在搞信息安全大赛，我们的作品是要基于xposed来做钩子，所以就研究了一下这个技术。但是真心感觉这个坑很多啊。。我是搞了半天才把框架搭建起来能够使用。写下来，各位后来的童鞋少走点坑吧。哈哈。">
+<meta name="keywords" content="Android,Xposed">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android xposed框架开发入门">
+<meta property="og:url" content="http://yoursite.com/2017/06/19/Android-xposed框架开发入门/index.html">
 <meta property="og:site_name" content="被你发现啦 ^_^">
-<meta property="og:description" content="爱折腾的Android攻城狮">
+<meta property="og:description" content="近期在搞信息安全大赛，我们的作品是要基于xposed来做钩子，所以就研究了一下这个技术。但是真心感觉这个坑很多啊。。我是搞了半天才把框架搭建起来能够使用。写下来，各位后来的童鞋少走点坑吧。哈哈。">
+<meta property="og:image" content="http://img.blog.csdn.net/20160321124919632">
+<meta property="og:image" content="http://img.blog.csdn.net/20160321125154808">
+<meta property="og:image" content="http://img.blog.csdn.net/20160321125948720">
+<meta property="og:updated_time" content="2017-06-18T16:15:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="被你发现啦 ^_^">
-<meta name="twitter:description" content="爱折腾的Android攻城狮">
+<meta name="twitter:title" content="Android xposed框架开发入门">
+<meta name="twitter:description" content="近期在搞信息安全大赛，我们的作品是要基于xposed来做钩子，所以就研究了一下这个技术。但是真心感觉这个坑很多啊。。我是搞了半天才把框架搭建起来能够使用。写下来，各位后来的童鞋少走点坑吧。哈哈。">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20160321124919632">
 
 
 
@@ -131,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/Android/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/19/Android-xposed框架开发入门/"/>
 
 
 
 
 
-  <title>标签: Android | 被你发现啦 ^_^</title>
+  <title>Android xposed框架开发入门 | 被你发现啦 ^_^</title>
   
 
 
@@ -171,7 +177,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -285,44 +291,218 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>Android<small>标签</small>
-      </h1>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/19/Android-xposed框架开发入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="uestcfei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="被你发现啦 ^_^">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android xposed框架开发入门</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-19T00:13:18+08:00">
+                2017-06-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android应用开发/" itemprop="url" rel="index">
+                    <span itemprop="name">Android应用开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/06/19/Android-xposed框架开发入门/" class="leancloud_visitors" data-flag-title="Android xposed框架开发入门">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>近期在搞信息安全大赛，我们的作品是要基于xposed来做钩子，所以就研究了一下这个技术。但是真心感觉这个坑很多啊。。我是搞了半天才把框架搭建起来能够使用。写下来，各位后来的童鞋少走点坑吧。哈哈。</p>
+<a id="more"></a>
+<p>入门涉及到的东西如下：</p>
+<ol>
+<li>xposed installer apk</li>
+<li>xposed framework zip</li>
+<li>xposed develop jar</li>
+<li>genymotion虚拟机（如果你是用真机测试，我这篇文章可能并不适合你）</li>
+<li>Android Studio（同样，我的项目是在AS中开发的，eclipse怎么样我并不知道。。。原谅我没用过eclipse。。）</li>
+<li>还有另外的我参考的学习的项目，我也会放上来，链接放在了最后。</li>
+</ol>
+<p>入门的文章这里都有。。</p>
+<ol>
+<li><a href="http://www.vkyii.com/2015/09/09/install-xposed-in-genymotion-android.html" target="_blank" rel="external">http://www.vkyii.com/2015/09/09/install-xposed-in-genymotion-android.html</a></li>
+<li><a href="http://my.oschina.net/wisedream/blog/471292?fromerr=rNPFQidG" target="_blank" rel="external">http://my.oschina.net/wisedream/blog/471292?fromerr=rNPFQidG</a></li>
+</ol>
+<p>其基本的思路都差不多。。我就直白的说一些坑吧。</p>
+<p>首先我解释一下上面列出来的东西都是干什么用的吧：</p>
+<ol>
+<li>xposed installer apk 用来在我们的手机上管理支持xposed的应用的（这里官方叫module，其实现在有很多这种应用的，例如这个<a href="http://www.wandoujia.com/apps/net.mitchtech.xposed.macroexpand" target="_blank" rel="external">Xposed Macro Expand应用</a>）</li>
+<li>xposed framework zip 这个是在手机上装好第一个后要安装的刷机包。。这个是xposed运行的基础。这个刷机包对android的版本很是敏感啊。。我刷了好多次都没有成功。。。</li>
+<li>xposed develop jar 这个是开发者包，是需要放到工程中去的，这里也有坑，后面说。</li>
+<li>genymotion虚拟机  我是在虚拟机上开发的，因为不想去刷真机，毕竟有风险。但是在虚拟机上刷xposed develop jar 包的时候也是有坑的。后面说。</li>
+<li>Android Studio就不说了。主要就是包的位置的问题</li>
+</ol>
+<h2 id="坑-No1"><a href="#坑-No1" class="headerlink" title="坑 No1"></a>坑 No1</h2><p>这个xposed在虚拟机上怎么都刷不了啊。。。重启无数次，然而还是不行。最后的解决办法是用的<a href="http://www.coolapk.com/apk/de.robv.android.xposed.installer" target="_blank" rel="external">这个xposed框架。</a>然后配的是genymotion中的nexus 4  android版本4.3的设备，这样就可以安装成功了。还是很方便的。。。因为不需要自己去下载xposed framework zip包（这个包下载起来也是非常麻烦。。我在forum.xda-developers网站上找了好半天啊。。。）</p>
+<h2 id="坑-No2"><a href="#坑-No2" class="headerlink" title="坑 No2"></a>坑 No2</h2><p>assets/xposed_init文件一定要放在正确的位置，不然会报找不到我们的Hook类的错，这个正确的位置应该是这个样子的：    <img src="http://img.blog.csdn.net/20160321124919632" alt="这里写图片描述"></p>
+<h2 id="坑No3"><a href="#坑No3" class="headerlink" title="坑No3"></a>坑No3</h2><p>同理这里的这个XposedBridgeApi-54.jar开发包也一定要放对位置：<strong><em>看上图吧</em></strong>。除此之外，这里的这个XposedBridgeApi-54.jar是不能使用compile来引用的，应该是使用provided，所以gradle文件中应该如下图：<img src="http://img.blog.csdn.net/20160321125154808" alt="这里写图片描述">不然会报<code>java.lang.IllegalAccessError: Class ref in pre-verified class resolved to unexpected implementation</code>这个错也是很坑爹的，在logcat日志中必须要看全局的日志才能看到（不加过滤），我是偶然看到的，为后面定位错误提供了思路。</p>
+<p>我是根据rovo大神的入门案例看的，看一下我实现的效果吧（注意看时间那里），这个其实是使用框架的<code>findAndHookMethod</code>方法来截获了Android系统源码的<code>com.android.systemui.statusbar.policy.Clock类</code>的<code>updateClock</code>方法，对显示的时间做出了修改而已：</p>
+<p><img src="http://img.blog.csdn.net/20160321125948720" alt="这里写图片描述"></p>
+<p>好了，暂时还没发现有其他的坑，后面如有发现新的坑，我会加上来。</p>
+<p>最后用到的资源，都在这里了。本人新手，如果有什么理解不对的地方，还望指教。</p>
+<ol>
+<li><a href="http://download.csdn.net/detail/u013496707/9467998" target="_blank" rel="external">xposed_installer.apk</a></li>
+<li><a href="https://github.com/rovo89/XposedExamples" target="_blank" rel="external">学习的案例</a></li>
+</ol>
 
-      <h2 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/06/19/Android-xposed框架开发入门/" itemprop="url">
-              
-                <span itemprop="name">Android xposed框架开发入门</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-19T00:13:18+08:00"
-              content="2017-06-19" >
-          06-19
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="/tags/Xposed/" rel="tag"># Xposed</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/18/大学生网站合集整理/" rel="next" title="大学生网站合集整理">
+                <i class="fa fa-chevron-left"></i> 大学生网站合集整理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -330,6 +510,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE0Mi81NzEw"></div>
+    
+  </div>
+
 
         </div>
         
@@ -349,8 +535,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -457,6 +652,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#坑-No1"><span class="nav-number">1.</span> <span class="nav-text">坑 No1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#坑-No2"><span class="nav-number">2.</span> <span class="nav-text">坑 No2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#坑No3"><span class="nav-number">3.</span> <span class="nav-text">坑No3</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -577,10 +788,10 @@
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
@@ -615,6 +826,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

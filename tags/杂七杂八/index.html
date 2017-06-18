@@ -77,13 +77,13 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Git,Android," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="被你发现啦 ^_^" type="application/atom+xml" />
 
 
 
@@ -95,17 +95,15 @@
 
 
 
-<meta name="description" content="之前在做开发的时候时不时的就会出现conflicts,很是恼火，关于conflicts是怎么出现的，也有些疑惑。今天通过一个比较不错的git log的显示工具来再现一下conflicts，以后注意。 俗话说：工欲善其事，必先利其器。所以开始之前，我们先把git的默认的git log命令做一下优化，通过alias命令来设置别名快捷使用，请自行将如下命令设置为gitlog，如：在profile文件中加">
-<meta name="keywords" content="Git,Android">
-<meta property="og:type" content="article">
-<meta property="og:title" content="通过log来理解git的冲突解决">
-<meta property="og:url" content="http://yoursite.com/2017/06/18/通过log来理解git的冲突解决/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="之前在做开发的时候时不时的就会出现conflicts,很是恼火，关于conflicts是怎么出现的，也有些疑惑。今天通过一个比较不错的git log的显示工具来再现一下conflicts，以后注意。 俗话说：工欲善其事，必先利其器。所以开始之前，我们先把git的默认的git log命令做一下优化，通过alias命令来设置别名快捷使用，请自行将如下命令设置为gitlog，如：在profile文件中加">
-<meta property="og:updated_time" content="2017-06-18T15:02:57.000Z">
+<meta name="description" content="爱折腾的Android攻城狮">
+<meta property="og:type" content="website">
+<meta property="og:title" content="被你发现啦 ^_^">
+<meta property="og:url" content="http://yoursite.com/tags/杂七杂八/index.html">
+<meta property="og:site_name" content="被你发现啦 ^_^">
+<meta property="og:description" content="爱折腾的Android攻城狮">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="通过log来理解git的冲突解决">
-<meta name="twitter:description" content="之前在做开发的时候时不时的就会出现conflicts,很是恼火，关于conflicts是怎么出现的，也有些疑惑。今天通过一个比较不错的git log的显示工具来再现一下conflicts，以后注意。 俗话说：工欲善其事，必先利其器。所以开始之前，我们先把git的默认的git log命令做一下优化，通过alias命令来设置别名快捷使用，请自行将如下命令设置为gitlog，如：在profile文件中加">
+<meta name="twitter:title" content="被你发现啦 ^_^">
+<meta name="twitter:description" content="爱折腾的Android攻城狮">
 
 
 
@@ -133,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/18/通过log来理解git的冲突解决/"/>
+  <link rel="canonical" href="http://yoursite.com/tags/杂七杂八/"/>
 
 
 
 
 
-  <title>通过log来理解git的冲突解决 | Hexo</title>
+  <title>标签: 杂七杂八 | 被你发现啦 ^_^</title>
   
 
 
@@ -173,7 +171,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -184,7 +182,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">被你发现啦 ^_^</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -215,6 +213,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -277,162 +285,44 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/18/通过log来理解git的冲突解决/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="uestcfei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h1>杂七杂八<small>标签</small>
+      </h1>
+    </div>
 
     
-      <header class="post-header">
+      
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">通过log来理解git的冲突解决</h1>
-        
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2017/06/18/大学生网站合集整理/" itemprop="url">
               
-                <span class="post-meta-item-text">发表于</span>
+                <span itemprop="name">大学生网站合集整理</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-18T20:17:12+08:00">
-                2017-06-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/06/18/通过log来理解git的冲突解决/" class="leancloud_visitors" data-flag-title="通过log来理解git的冲突解决">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>之前在做开发的时候时不时的就会出现conflicts,很是恼火，关于conflicts是怎么出现的，也有些疑惑。今天通过一个比较不错的git log的显示工具来再现一下conflicts，以后注意。</p>
-<p>俗话说：工欲善其事，必先利其器。所以开始之前，我们先把git的默认的git log命令做一下优化，通过alias命令来设置别名快捷使用，请自行将如下命令设置为gitlog，如：在profile文件中加入“alias gitlog=’git log –all –graph –pretty=format:”%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset” –abbrev-commit –date=relative’”，就可以使用漂亮简单的git log命令了。如图所示：</p>
-
-      
-    </div>
-
-    <div>
-      
+            </a>
         
+      </h2>
 
-      
-    </div>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-06-18T20:17:12+08:00"
+              content="2017-06-18" >
+          06-18
+        </time>
+      </div>
 
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Git/" rel="tag"># Git</a>
-          
-            <a href="/tags/Android/" rel="tag"># Android</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/06/18/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
+    
   </div>
+
+  
 
 
           </div>
@@ -440,12 +330,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE0Mi81NzEw"></div>
-    
-  </div>
-
 
         </div>
         
@@ -473,7 +357,7 @@
                alt="uestcfei" />
           <p class="site-author-name" itemprop="name">uestcfei</p>
            
-              <p class="site-description motion-element" itemprop="description">Stay hungry, stay foolish.</p>
+              <p class="site-description motion-element" itemprop="description">爱折腾的Android攻城狮</p>
           
         </div>
         <nav class="site-state motion-element">
@@ -481,12 +365,21 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
 
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
           
 
           
@@ -494,7 +387,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -512,6 +405,44 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/liangpengfei" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/uestcfei" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://stackoverflow.com/users/4539333/uestcfei?tab=profile" target="_blank" title="StackOverFlow">
+                  
+                    <i class="fa fa-fw fa-stack-overflow"></i>
+                  
+                  StackOverFlow
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/liang-peng-fei-88-10/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
           
         </div>
 
@@ -646,10 +577,10 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-
+  
 
   
 
@@ -684,17 +615,6 @@
 
 
 
-  
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
   
 
 
