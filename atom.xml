@@ -5,15 +5,36 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-06-18T09:16:44.000Z</updated>
+  <updated>2017-06-18T12:21:50.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>uestcfei</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>通过log来理解git的冲突解决</title>
+    <link href="http://yoursite.com/2017/06/18/%E9%80%9A%E8%BF%87log%E6%9D%A5%E7%90%86%E8%A7%A3git%E7%9A%84%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3/"/>
+    <id>http://yoursite.com/2017/06/18/通过log来理解git的冲突解决/</id>
+    <published>2017-06-18T12:17:12.000Z</published>
+    <updated>2017-06-18T12:21:50.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前在做开发的时候时不时的就会出现conflicts,很是恼火，关于conflicts是怎么出现的，也有些疑惑。今天通过一个比较不错的git log的显示工具来再现一下conflicts，以后注意。</p>
+<p>俗话说：工欲善其事，必先利其器。所以开始之前，我们先把git的默认的git log命令做一下优化，通过alias命令来设置别名快捷使用，请自行将如下命令设置为gitlog，如：在profile文件中加入“alias gitlog=’git log –all –graph –pretty=format:”%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset” –abbrev-commit –date=relative’”，就可以使用漂亮简单的git log命令了。如图所示：</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前在做开发的时候时不时的就会出现conflicts,很是恼火，关于conflicts是怎么出现的，也有些疑惑。今天通过一个比较不错的git log的显示工具来再现一下conflicts，以后注意。&lt;/p&gt;
+&lt;p&gt;俗话说：工欲善其事，必先利其器。所以开始之前，我们先把git
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
