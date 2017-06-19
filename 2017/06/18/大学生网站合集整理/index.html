@@ -1075,6 +1075,22 @@
     <div>
       
         
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持技术分享，赏小弟一杯咖啡钱 ^_^</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="uestcfei Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
     </div>
@@ -1311,7 +1327,8 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
   
   &copy; 
   <span itemprop="copyrightYear">2017</span>
@@ -1332,6 +1349,13 @@
     NexT.Pisces
   </a>
 </div>
+
+<div class="pv">
+  <span id="busuanzi_container_site_pv">
+      本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+</div>
+
 
 
         

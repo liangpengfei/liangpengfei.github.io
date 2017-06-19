@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/06/18/hello-world/</loc>
+    
+    <lastmod>2017-06-19T02:05:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/06/18/%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%BD%91%E7%AB%99%E5%90%88%E9%9B%86%E6%95%B4%E7%90%86/</loc>
     
     <lastmod>2017-06-18T16:18:35.000Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://yoursite.com/2017/06/19/Android-xposed%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/</loc>
     
     <lastmod>2017-06-18T16:15:49.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/06/18/hello-world/</loc>
-    
-    <lastmod>2017-06-18T16:07:55.000Z</lastmod>
     
   </url>
   
