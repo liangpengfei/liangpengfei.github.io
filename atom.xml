@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-10T14:51:21.000Z</updated>
+  <updated>2017-07-15T09:16:04.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,181 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用下面这些工具和技巧，帮你快速开发一个Android App</title>
+    <link href="http://yoursite.com/2017/07/15/%E4%BD%BF%E7%94%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E4%BA%9B%E5%B7%A5%E5%85%B7%E5%92%8C%E6%8A%80%E5%B7%A7%EF%BC%8C%E5%B8%AE%E4%BD%A0%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AAAndroid%20App/"/>
+    <id>http://yoursite.com/2017/07/15/使用下面这些工具和技巧，帮你快速开发一个Android App/</id>
+    <published>2017-07-15T08:37:21.000Z</published>
+    <updated>2017-07-15T09:16:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="开发一个Android-App需要什么"><a href="#开发一个Android-App需要什么" class="headerlink" title="开发一个Android App需要什么"></a>开发一个Android App需要什么</h1><ul>
+<li><a href="#开发一个android-app需要什么">开发一个Android App需要什么</a><ul>
+<li><a href="#简介">简介</a></li>
+<li><a href="#标准">标准</a></li>
+<li><a href="#说明">说明</a></li>
+<li><a href="#交流">交流</a></li>
+<li><a href="#ui控件类开源库">UI控件类开源库</a></li>
+<li><a href="#工具类开源库">工具类开源库</a></li>
+<li><a href="#平台服务">平台服务</a></li>
+<li><a href="#开发小技巧">开发小技巧</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>本库总结了一个能够进行快速开发一个Android App所需的开源库、开发技巧、开发工具等。主要是为了做索引，方便开发新应用的时候快速进入状态。</p>
+<a id="more"></a>
+<h3 id="标准"><a href="#标准" class="headerlink" title="标准"></a>标准</h3><ul>
+<li>有益：确实能够解决文件，提高开发效率。</li>
+<li>有用：常用的一些在线工具或者技巧。</li>
+</ul>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><ul>
+<li>非商业，不推广，纯收录，不排名。</li>
+<li>来源网站不能违反相关的法律法规，广告尽可能少，访问速度最好要快。</li>
+<li>请多多使用Ctrl+F。</li>
+<li>如果出现网页失效，请提交issues。</li>
+</ul>
+<h3 id="交流"><a href="#交流" class="headerlink" title="交流"></a>交流</h3><p>欢迎大家将珍藏已久的好网站、好工具、好方法共享出来，您可以：</p>
+<ul>
+<li>提交 <a href="https://github.com/liangpengfei/WhatNeedToDevAndroidApp/issues/new" target="_blank" rel="external">Issues</a></li>
+<li>发起 <a href="https://github.com/liangpengfei/WhatNeedToDevAndroidApp/compare" target="_blank" rel="external">Pull Request</a></li>
+</ul>
+<p>贡献者名单: <a href="https://github.com/liangpengfei/WhatNeedToDevAndroidApp/graphs/contributors" target="_blank" rel="external">https://github.com/liangpengfei/WhatNeedToDevAndroidApp/graphs/contributors</a></p>
+<h3 id="UI控件类开源库"><a href="#UI控件类开源库" class="headerlink" title="UI控件类开源库"></a>UI控件类开源库</h3><ul>
+<li><a href="https://github.com/jianghejie/XRecyclerView" target="_blank" rel="external">XRecyclerView</a> <ul>
+<li>支持<strong>pullRefresh</strong>和<strong>loadMore</strong>，功能简单但是很实用。</li>
+<li>方便对<strong>header</strong>进行自定义。</li>
+</ul>
+</li>
+<li><p><a href="https://github.com/chrisbanes/PhotoView" target="_blank" rel="external">PhotoView</a></p>
+<ul>
+<li>可以直接从Play Store中下载<a href="https://play.google.com/store/apps/details?id=uk.co.senab.photoview.sample" target="_blank" rel="external">Sample.apk</a>，方便自己有直观的感受再去找相应部分的代码(Attention:现在Google Play中的应用不是最新版本，所以想体验最新版本的，要直接去编译Github上的代码或者从我编好的<a href="https://pan.baidu.com/s/1eSiQCIu" target="_blank" rel="external">百度云盘</a>中下载)</li>
+<li>和<strong>ViewPager</strong>合作良好</li>
+<li>支持<strong>zooming</strong>、 <strong>multi-touch</strong>  、 <strong>double-tap</strong>，基本上功能够用</li>
+<li>支持用户点击图片通知</li>
+</ul>
+</li>
+<li><p><a href="https://github.com/myinnos/AwesomeImagePicker" target="_blank" rel="external">AwesomeImagePicker</a></p>
+<ul>
+<li>简单轻量，可以同时选多张图片。仅仅选择相册图片的时候使用这个还不错。</li>
+<li>而且自己重新修改源码满足自己的项目需求也比较简单。</li>
+<li>缺点就是没有处理从相机获取图片的逻辑</li>
+</ul>
+</li>
+<li><p><a href="https://github.com/crazycodeboy/TakePhoto" target="_blank" rel="external">TakePhoto</a></p>
+<ul>
+<li>功能比较全，稍微大一点。。定制化程度也算比较高了。</li>
+</ul>
+<ul>
+<li>支持通过相机拍照获取图片</li>
+<li>支持从相册选择图片</li>
+<li>支持从文件选择图片  </li>
+<li>支持批量图片选取</li>
+<li>支持图片压缩以及批量图片压缩</li>
+<li>支持图片裁切以及批量图片裁切</li>
+<li>支持照片旋转角度自动纠正</li>
+<li>支持自动权限管理(无需关心SD卡及摄像头权限等问题)</li>
+<li>支持对裁剪及压缩参数个性化配置  </li>
+<li>提供自带裁剪工具(可选)  </li>
+<li>支持智能选取及裁剪异常处理</li>
+<li>支持因拍照Activity被回收后的自动恢复   </li>
+<li>支持Android7.0</li>
+<li>+支持多种压缩工具</li>
+<li>+支持多种图片选择工具</li>
+</ul>
+</li>
+<li><p><a href="https://github.com/wdullaer/MaterialDateTimePicker" target="_blank" rel="external">materialdatetimepicker</a></p>
+<ul>
+<li>使用简单，风格可定制。</li>
+<li>很轻量，如果仅仅是想用一个Date 和 Time选择器，非常推荐这个。</li>
+</ul>
+</li>
+<li><p><a href="https://github.com/afollestad/material-dialogs" target="_blank" rel="external">MaterialDialog</a></p>
+<ul>
+<li>直接看<a href="https://github.com/afollestad/material-dialogs/blob/master/sample/sample.apk" target="_blank" rel="external">Sample.apk</a>，方便定位代码。</li>
+<li>Dialog的使用方式比较全，多种风格，基本上能满足需求，一直都在用。</li>
+</ul>
+</li>
+</ul>
+<h3 id="工具类开源库"><a href="#工具类开源库" class="headerlink" title="工具类开源库"></a>工具类开源库</h3><ul>
+<li><p><a href="https://github.com/lovedise/PermissionGen" target="_blank" rel="external">PermissionGen</a></p>
+<ul>
+<li>方便处理Android M之后的动态权限的问题，使用很方便。</li>
+<li>再也不用自己去判断版本那些琐碎的操作了。</li>
+</ul>
+</li>
+<li><p><a href="https://github.com/JakeWharton/butterknife" target="_blank" rel="external">butterknife</a></p>
+<ul>
+<li>快速注入视图，再也不用findViewById了。非常推荐</li>
+</ul>
+</li>
+<li><a href="https://realm.io/cn/" target="_blank" rel="external">Realm</a><ul>
+<li>小的项目可以考虑。</li>
+<li>文档比较全，使用起来很顺手。</li>
+</ul>
+</li>
+</ul>
+<h3 id="平台服务"><a href="#平台服务" class="headerlink" title="平台服务"></a>平台服务</h3><ul>
+<li><p><a href="http://leancloud.cn" target="_blank" rel="external">LenaCloud</a></p>
+<ul>
+<li>API开发文档做的很人性化，使用起来也比较方便。</li>
+<li>相比于其他的几家，比较推荐</li>
+</ul>
+</li>
+<li><p><a href="https://www.bangcle.com" target="_blank" rel="external">班邦加固</a></p>
+<ul>
+<li>一直再用这个，也没有用过其他的，因为平时都是小型的项目，加密防护的需求不是很大。</li>
+</ul>
+</li>
+<li><p><a href="http://iconfont.cn" target="_blank" rel="external">IconFont</a></p>
+<ul>
+<li>图标比较全，也开放下载，自己写小项目的时候在上面找图标。</li>
+</ul>
+</li>
+<li><p><a href="http://jpg2png.com" target="_blank" rel="external">JPG2PNG</a></p>
+<ul>
+<li>在线转换JPG到PNG。</li>
+</ul>
+</li>
+</ul>
+<h3 id="开发小技巧"><a href="#开发小技巧" class="headerlink" title="开发小技巧"></a>开发小技巧</h3><ul>
+<li><p>使用最新Android Studio的Vector Asset</p>
+<ul>
+<li>支持从SVG图标（图标可以从<a href="http://iconfont.cn" target="_blank" rel="external">IconFont</a>下载）转换成xml的<strong>VectorDrawable</strong>格式的文件</li>
+</ul>
+</li>
+<li><p>尽可能的使用Android的模板，可以减少很多工作量</p>
+<ul>
+<li>例如使用BasicActivity、LoginActivity等，用习惯了很好用。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;开发一个Android-App需要什么&quot;&gt;&lt;a href=&quot;#开发一个Android-App需要什么&quot; class=&quot;headerlink&quot; title=&quot;开发一个Android App需要什么&quot;&gt;&lt;/a&gt;开发一个Android App需要什么&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#开发一个android-app需要什么&quot;&gt;开发一个Android App需要什么&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#简介&quot;&gt;简介&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#标准&quot;&gt;标准&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#说明&quot;&gt;说明&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#交流&quot;&gt;交流&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#ui控件类开源库&quot;&gt;UI控件类开源库&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#工具类开源库&quot;&gt;工具类开源库&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#平台服务&quot;&gt;平台服务&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#开发小技巧&quot;&gt;开发小技巧&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;本库总结了一个能够进行快速开发一个Android App所需的开源库、开发技巧、开发工具等。主要是为了做索引，方便开发新应用的时候快速进入状态。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Android应用开发" scheme="http://yoursite.com/categories/Android%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+  </entry>
   
   <entry>
     <title>Android 山寨机进入Recovery界面进行刷机、双清&#39; </title>
