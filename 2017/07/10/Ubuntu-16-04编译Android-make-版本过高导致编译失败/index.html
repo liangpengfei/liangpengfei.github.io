@@ -102,10 +102,12 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/10/Ubuntu-16-04编译Android-make-版本过高导致编译失败/index.html">
 <meta property="og:site_name" content="被你发现啦 ^_^">
 <meta property="og:description" content="如题，近期在Ubuntu 16.04上编译Android 6.0源码的时候出现报错，记录如下： 我的开发环境： Ubuntu 16.04 make 4.0 Android M 源码  大致报错如下：1/home/fei/dev/android/source/prada/kernel/drivers/input/touchscreen/focaltech/Makefile:9: *** missin">
-<meta property="og:updated_time" content="2017-07-10T14:53:08.000Z">
+<meta property="og:image" content="https://ww2.sinaimg.cn/large/006tNc79ly1fivp3f5e4xj309k09kq2w.jpg">
+<meta property="og:updated_time" content="2017-08-26T08:03:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu 16.04编译Android,make 版本过高导致编译失败">
 <meta name="twitter:description" content="如题，近期在Ubuntu 16.04上编译Android 6.0源码的时候出现报错，记录如下： 我的开发环境： Ubuntu 16.04 make 4.0 Android M 源码  大致报错如下：1/home/fei/dev/android/source/prada/kernel/drivers/input/touchscreen/focaltech/Makefile:9: *** missin">
+<meta name="twitter:image" content="https://ww2.sinaimg.cn/large/006tNc79ly1fivp3f5e4xj309k09kq2w.jpg">
 
 
 
@@ -440,6 +442,8 @@ kernel/AndroidKernel.mk:132: recipe for target &apos;out/target/product/prada/ob
 <p>此时make 4.0 版本的位置为<code>/usr/bin/make</code>， 使用的时候指明即可，默认为make 4.0</p>
 <p>除了上面直接指明路径外，还可以使用update-alternatives 工具来进行管理，具体怎么使用，还请自行Google。但是我个人觉得直接指明路径是最简单的方式了。</p>
 <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://askubuntu.com/questions/860066/is-it-any-way-to-temporarily-install-make-3-81" target="_blank" rel="external">https://askubuntu.com/questions/860066/is-it-any-way-to-temporarily-install-make-3-81</a></p>
+<p>就记录这些，防止其他小伙伴重复踩坑。</p>
+<h4 id="也欢迎您关注我的公众号：小码哥在线-文章会第一时间在公众号发布"><a href="#也欢迎您关注我的公众号：小码哥在线-文章会第一时间在公众号发布" class="headerlink" title="也欢迎您关注我的公众号：小码哥在线 文章会第一时间在公众号发布"></a>也欢迎您关注我的公众号：小码哥在线 文章会第一时间在公众号发布</h4><p><strong>我会定期发布自己在工作中遇到的经典Bug，和大家一起学习一起进步。 我主要是做Android FrameWork开发的，当然工作之余也自己写一些App玩耍，希望能帮助大家了解更多的Android FrameWork和Android应用开发的相关知识，从顶向下搞定Android系统。</strong><br><img src="https://ww2.sinaimg.cn/large/006tNc79ly1fivp3f5e4xj309k09kq2w.jpg" alt=""></p>
 
       
     </div>
@@ -672,7 +676,7 @@ kernel/AndroidKernel.mk:132: recipe for target &apos;out/target/product/prada/ob
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#我的开发环境："><span class="nav-number">1.</span> <span class="nav-text">我的开发环境：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#大致报错如下："><span class="nav-number">2.</span> <span class="nav-text">大致报错如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体如下："><span class="nav-number">3.</span> <span class="nav-text">具体如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装make-3-8-1"><span class="nav-number">4.</span> <span class="nav-text">安装make 3.8.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#我的开发环境："><span class="nav-number">1.</span> <span class="nav-text">我的开发环境：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#大致报错如下："><span class="nav-number">2.</span> <span class="nav-text">大致报错如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体如下："><span class="nav-number">3.</span> <span class="nav-text">具体如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装make-3-8-1"><span class="nav-number">4.</span> <span class="nav-text">安装make 3.8.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#也欢迎您关注我的公众号：小码哥在线-文章会第一时间在公众号发布"><span class="nav-number">5.1.</span> <span class="nav-text">也欢迎您关注我的公众号：小码哥在线 文章会第一时间在公众号发布</span></a></li></ol></li></ol></div>
             
 
           </div>

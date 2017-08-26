@@ -110,7 +110,7 @@
     <link href="http://yoursite.com/2017/07/15/%E4%BD%BF%E7%94%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E4%BA%9B%E5%B7%A5%E5%85%B7%E5%92%8C%E6%8A%80%E5%B7%A7%EF%BC%8C%E5%B8%AE%E4%BD%A0%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AAAndroid%20App/"/>
     <id>http://yoursite.com/2017/07/15/使用下面这些工具和技巧，帮你快速开发一个Android App/</id>
     <published>2017-07-15T08:37:21.000Z</published>
-    <updated>2017-07-15T09:16:04.000Z</updated>
+    <updated>2017-08-26T08:03:19.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="开发一个Android-App需要什么"><a href="#开发一个Android-App需要什么" class="headerlink" title="开发一个Android App需要什么"></a>开发一个Android App需要什么</h1><ul>
 <li><a href="#开发一个android-app需要什么">开发一个Android App需要什么</a><ul>
@@ -252,6 +252,8 @@
 </ul>
 </li>
 </ul>
+<p>好啦，今天就说这么多。</p>
+<h4 id="也欢迎您关注我的公众号：小码哥在线-文章会第一时间在公众号发布"><a href="#也欢迎您关注我的公众号：小码哥在线-文章会第一时间在公众号发布" class="headerlink" title="也欢迎您关注我的公众号：小码哥在线 文章会第一时间在公众号发布"></a>也欢迎您关注我的公众号：小码哥在线 文章会第一时间在公众号发布</h4><p><strong>我会定期发布自己在工作中遇到的经典Bug，和大家一起学习一起进步。 我主要是做Android FrameWork开发的，当然工作之余也自己写一些App玩耍，希望能帮助大家了解更多的Android FrameWork和Android应用开发的相关知识，从顶向下搞定Android系统。</strong><br><img src="https://ww2.sinaimg.cn/large/006tNc79ly1fivp3f5e4xj309k09kq2w.jpg" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -285,7 +287,7 @@
     <link href="http://yoursite.com/2017/07/10/Android-%E5%88%B7%E6%9C%BA%E5%87%BA%E7%8E%B0%E5%8E%9F%E7%94%9FRecovery%E7%95%8C%E9%9D%A2%EF%BC%8C%E5%90%8E%E7%BB%AD%E6%93%8D%E4%BD%9C/"/>
     <id>http://yoursite.com/2017/07/10/Android-刷机出现原生Recovery界面，后续操作/</id>
     <published>2017-07-10T02:38:45.000Z</published>
-    <updated>2017-07-10T14:51:21.000Z</updated>
+    <updated>2017-08-26T08:04:26.000Z</updated>
     
     <content type="html"><![CDATA[<p>这几天老人用的山寨机的锁屏九宫格手势密码被熊孩子搞乱了，只能尝试双清数据。<br>但是由于是山寨机，网上相关的资料很少，进入Recovery后，总是出现一个躺着的机器人，胸前还又一个红色的三角感叹号，如下图：</p>
 <p><img src="https://ww3.sinaimg.cn/large/006tKfTcly1fhelcvxgrwj305z05kmy0.jpg" alt=""></p>
@@ -298,6 +300,8 @@
 <p><img src="https://ww4.sinaimg.cn/large/006tKfTcly1fhelvz9y4lj31kw23v4qr.jpg" alt=""></p>
 <p>双清数据，即可重置系统，手势密码也就可以重置了。只不过现在手机里的数据就都没有了。最终重置成功如下：</p>
 <p><img src="https://ww1.sinaimg.cn/large/006tKfTcly1fhelw6pmbfj31kw23vu0z.jpg" alt=""></p>
+<p>mark一下。</p>
+<h4 id="也欢迎您关注我的公众号：小码哥在线-文章会第一时间在公众号发布"><a href="#也欢迎您关注我的公众号：小码哥在线-文章会第一时间在公众号发布" class="headerlink" title="也欢迎您关注我的公众号：小码哥在线 文章会第一时间在公众号发布"></a>也欢迎您关注我的公众号：小码哥在线 文章会第一时间在公众号发布</h4><p><strong>我会定期发布自己在工作中遇到的经典Bug，和大家一起学习一起进步。 我主要是做Android FrameWork开发的，当然工作之余也自己写一些App玩耍，希望能帮助大家了解更多的Android FrameWork和Android应用开发的相关知识，从顶向下搞定Android系统。</strong><br><img src="https://ww2.sinaimg.cn/large/006tNc79ly1fivp3f5e4xj309k09kq2w.jpg" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -321,7 +325,7 @@
     <link href="http://yoursite.com/2017/07/10/Ubuntu-16-04%E7%BC%96%E8%AF%91Android-make-%E7%89%88%E6%9C%AC%E8%BF%87%E9%AB%98%E5%AF%BC%E8%87%B4%E7%BC%96%E8%AF%91%E5%A4%B1%E8%B4%A5/"/>
     <id>http://yoursite.com/2017/07/10/Ubuntu-16-04编译Android-make-版本过高导致编译失败/</id>
     <published>2017-07-10T02:28:55.000Z</published>
-    <updated>2017-07-10T14:53:08.000Z</updated>
+    <updated>2017-08-26T08:03:58.000Z</updated>
     
     <content type="html"><![CDATA[<p>如题，近期在Ubuntu 16.04上编译Android 6.0源码的时候出现报错，记录如下：</p>
 <h3 id="我的开发环境："><a href="#我的开发环境：" class="headerlink" title="我的开发环境："></a>我的开发环境：</h3><ul>
@@ -369,6 +373,8 @@ kernel/AndroidKernel.mk:132: recipe for target &apos;out/target/product/prada/ob
 <p>此时make 4.0 版本的位置为<code>/usr/bin/make</code>， 使用的时候指明即可，默认为make 4.0</p>
 <p>除了上面直接指明路径外，还可以使用update-alternatives 工具来进行管理，具体怎么使用，还请自行Google。但是我个人觉得直接指明路径是最简单的方式了。</p>
 <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://askubuntu.com/questions/860066/is-it-any-way-to-temporarily-install-make-3-81" target="_blank" rel="external">https://askubuntu.com/questions/860066/is-it-any-way-to-temporarily-install-make-3-81</a></p>
+<p>就记录这些，防止其他小伙伴重复踩坑。</p>
+<h4 id="也欢迎您关注我的公众号：小码哥在线-文章会第一时间在公众号发布"><a href="#也欢迎您关注我的公众号：小码哥在线-文章会第一时间在公众号发布" class="headerlink" title="也欢迎您关注我的公众号：小码哥在线 文章会第一时间在公众号发布"></a>也欢迎您关注我的公众号：小码哥在线 文章会第一时间在公众号发布</h4><p><strong>我会定期发布自己在工作中遇到的经典Bug，和大家一起学习一起进步。 我主要是做Android FrameWork开发的，当然工作之余也自己写一些App玩耍，希望能帮助大家了解更多的Android FrameWork和Android应用开发的相关知识，从顶向下搞定Android系统。</strong><br><img src="https://ww2.sinaimg.cn/large/006tNc79ly1fivp3f5e4xj309k09kq2w.jpg" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -397,7 +403,7 @@ kernel/AndroidKernel.mk:132: recipe for target &apos;out/target/product/prada/ob
     <link href="http://yoursite.com/2017/06/19/Android-xposed%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/"/>
     <id>http://yoursite.com/2017/06/19/Android-xposed框架开发入门/</id>
     <published>2017-06-18T16:13:18.000Z</published>
-    <updated>2017-06-18T16:15:49.000Z</updated>
+    <updated>2017-08-26T08:05:17.000Z</updated>
     
     <content type="html"><![CDATA[<p>近期在搞信息安全大赛，我们的作品是要基于xposed来做钩子，所以就研究了一下这个技术。但是真心感觉这个坑很多啊。。我是搞了半天才把框架搭建起来能够使用。写下来，各位后来的童鞋少走点坑吧。哈哈。</p>
 <a id="more"></a>
@@ -435,6 +441,8 @@ kernel/AndroidKernel.mk:132: recipe for target &apos;out/target/product/prada/ob
 <li><a href="http://download.csdn.net/detail/u013496707/9467998" target="_blank" rel="external">xposed_installer.apk</a></li>
 <li><a href="https://github.com/rovo89/XposedExamples" target="_blank" rel="external">学习的案例</a></li>
 </ol>
+<p>记录一下，防止再次踩坑。</p>
+<h4 id="也欢迎您关注我的公众号：小码哥在线-文章会第一时间在公众号发布"><a href="#也欢迎您关注我的公众号：小码哥在线-文章会第一时间在公众号发布" class="headerlink" title="也欢迎您关注我的公众号：小码哥在线 文章会第一时间在公众号发布"></a>也欢迎您关注我的公众号：小码哥在线 文章会第一时间在公众号发布</h4><p><strong>我会定期发布自己在工作中遇到的经典Bug，和大家一起学习一起进步。 我主要是做Android FrameWork开发的，当然工作之余也自己写一些App玩耍，希望能帮助大家了解更多的Android FrameWork和Android应用开发的相关知识，从顶向下搞定Android系统。</strong><br><img src="https://ww2.sinaimg.cn/large/006tNc79ly1fivp3f5e4xj309k09kq2w.jpg" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -457,7 +465,7 @@ kernel/AndroidKernel.mk:132: recipe for target &apos;out/target/product/prada/ob
     <link href="http://yoursite.com/2017/06/18/%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%BD%91%E7%AB%99%E5%90%88%E9%9B%86%E6%95%B4%E7%90%86/"/>
     <id>http://yoursite.com/2017/06/18/大学生网站合集整理/</id>
     <published>2017-06-18T12:17:12.000Z</published>
-    <updated>2017-06-18T16:18:35.000Z</updated>
+    <updated>2017-08-26T08:05:00.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>本库旨在建设一个对大学生有益有用的网站集合，欢迎参与编辑。</p>
 <h3 id="标准"><a href="#标准" class="headerlink" title="标准"></a>标准</h3><ul>
@@ -1126,7 +1134,9 @@ kernel/AndroidKernel.mk:132: recipe for target &apos;out/target/product/prada/ob
 </ul>
 <div id="2.11"></div>
 
-<h3 id="管理学"><a href="#管理学" class="headerlink" title="管理学"></a>管理学</h3>]]></content>
+<h3 id="管理学"><a href="#管理学" class="headerlink" title="管理学"></a>管理学</h3><p>好啦，今天就这些，后面有多的再加进来。</p>
+<h4 id="也欢迎您关注我的公众号：小码哥在线-文章会第一时间在公众号发布"><a href="#也欢迎您关注我的公众号：小码哥在线-文章会第一时间在公众号发布" class="headerlink" title="也欢迎您关注我的公众号：小码哥在线 文章会第一时间在公众号发布"></a>也欢迎您关注我的公众号：小码哥在线 文章会第一时间在公众号发布</h4><p><strong>我会定期发布自己在工作中遇到的经典Bug，和大家一起学习一起进步。 我主要是做Android FrameWork开发的，当然工作之余也自己写一些App玩耍，希望能帮助大家了解更多的Android FrameWork和Android应用开发的相关知识，从顶向下搞定Android系统。</strong><br><img src="https://ww2.sinaimg.cn/large/006tNc79ly1fivp3f5e4xj309k09kq2w.jpg" alt=""></p>
+]]></content>
     
     <summary type="html">
     
