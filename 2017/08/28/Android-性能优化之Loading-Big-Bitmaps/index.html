@@ -104,7 +104,7 @@
 <meta property="og:description" content="高效加载Large Bitmaps加载大Bitmaps到内存中，总是会有各种各样的问题，我们在开发过程中，经常会遇到因为图片资源过大导致OOM。我们应该始终留意在Android中每一个应用占用的内存大小是有上限的，过了这个上限，系统就回报OOM，用户体验非常差。 今天我们就聊一聊如何加载Large Bitmaps，了解以下它具体是如何工作的。  这篇文章只是用来聊一聊加载Bitmaps图片时的优">
 <meta property="og:image" content="https://ww2.sinaimg.cn/large/006tKfTcly1fiz4q2o73mj31jk0r1dni.jpg">
 <meta property="og:image" content="https://ww2.sinaimg.cn/large/006tKfTcly1fiz64a15bvj31401z4drv.jpg">
-<meta property="og:updated_time" content="2017-08-28T01:14:46.000Z">
+<meta property="og:updated_time" content="2017-08-28T01:15:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 性能优化之Loading Big Bitmaps">
 <meta name="twitter:description" content="高效加载Large Bitmaps加载大Bitmaps到内存中，总是会有各种各样的问题，我们在开发过程中，经常会遇到因为图片资源过大导致OOM。我们应该始终留意在Android中每一个应用占用的内存大小是有上限的，过了这个上限，系统就回报OOM，用户体验非常差。 今天我们就聊一聊如何加载Large Bitmaps，了解以下它具体是如何工作的。  这篇文章只是用来聊一聊加载Bitmaps图片时的优">
@@ -403,6 +403,7 @@
 <blockquote>
 <p>这篇文章只是用来聊一聊加载Bitmaps图片时的优化原理，但是我还是推荐你直接使用<strong><em>Piacaso</em></strong>或者<strong><em>Glide</em></strong>来加载图片，因为它们已经在底层帮我们优化好了，没有必要重复造轮子。</p>
 </blockquote>
+<a id="more"></a>
 <h2 id="加载Bitmap进内存"><a href="#加载Bitmap进内存" class="headerlink" title="加载Bitmap进内存"></a>加载Bitmap进内存</h2><p>这非常简单，你需要使用BitmapFactory来解码Bitmap就行。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.hqimage);</div><div class="line">imageView.setImageBitmap(bitmap);</div></pre></td></tr></table></figure>
 <p>看起来一切正常，但实际上这里有一个很严重的问题，我们可以先查看以下加载进来的Bitmap占用的内存大小。</p>
