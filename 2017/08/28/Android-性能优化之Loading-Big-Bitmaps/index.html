@@ -104,7 +104,8 @@
 <meta property="og:description" content="高效加载Large Bitmaps加载大Bitmaps到内存中，总是会有各种各样的问题，我们在开发过程中，经常会遇到因为图片资源过大导致OOM。我们应该始终留意在Android中每一个应用占用的内存大小是有上限的，过了这个上限，系统就回报OOM，用户体验非常差。 今天我们就聊一聊如何加载Large Bitmaps，了解以下它具体是如何工作的。  这篇文章只是用来聊一聊加载Bitmaps图片时的优">
 <meta property="og:image" content="https://ww2.sinaimg.cn/large/006tKfTcly1fiz4q2o73mj31jk0r1dni.jpg">
 <meta property="og:image" content="https://ww2.sinaimg.cn/large/006tKfTcly1fiz64a15bvj31401z4drv.jpg">
-<meta property="og:updated_time" content="2017-08-28T01:17:34.000Z">
+<meta property="og:image" content="https://ww2.sinaimg.cn/large/006tKfTcly1fiy19tqg2uj30hs0b4gne.jpg">
+<meta property="og:updated_time" content="2017-08-28T01:24:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 性能优化之Loading Big Bitmaps">
 <meta name="twitter:description" content="高效加载Large Bitmaps加载大Bitmaps到内存中，总是会有各种各样的问题，我们在开发过程中，经常会遇到因为图片资源过大导致OOM。我们应该始终留意在Android中每一个应用占用的内存大小是有上限的，过了这个上限，系统就回报OOM，用户体验非常差。 今天我们就聊一聊如何加载Large Bitmaps，了解以下它具体是如何工作的。  这篇文章只是用来聊一聊加载Bitmaps图片时的优">
@@ -401,7 +402,7 @@
 <h2 id="高效加载Large-Bitmaps"><a href="#高效加载Large-Bitmaps" class="headerlink" title="高效加载Large Bitmaps"></a>高效加载Large Bitmaps</h2><p>加载大Bitmaps到内存中，总是会有各种各样的问题，我们在开发过程中，经常会遇到因为图片资源过大导致OOM。我们应该始终留意在Android中每一个应用占用的内存大小是有上限的，过了这个上限，系统就回报OOM，用户体验非常差。</p>
 <p>今天我们就聊一聊如何加载<strong>Large Bitmaps</strong>，了解以下它具体是如何工作的。</p>
 <blockquote>
-<p>这篇文章只是用来聊一聊加载Bitmaps图片时的优化原理，但是我还是推荐你直接使用<strong><em>Piacaso</em></strong>或者<strong><em>Glide</em></strong>来加载图片，因为它们已经在底层帮我们优化好了，没有必要重复造轮子。</p>
+<p>这篇文章只是用来聊一聊加载Bitmaps图片时的优化原理，但是我还是推荐你直接使用<strong><em><a href="http://square.github.io/picasso/" target="_blank" rel="external">Piacaso</a></em></strong>或者<strong><em><a href="https://github.com/bumptech/glide" target="_blank" rel="external">Glide</a></em></strong>来加载图片，因为它们已经在底层帮我们优化好了，没有必要重复造轮子。</p>
 </blockquote>
 <a id="more"></a>
 <h2 id="加载Bitmap进内存"><a href="#加载Bitmap进内存" class="headerlink" title="加载Bitmap进内存"></a>加载Bitmap进内存</h2><p>这非常简单，你需要使用BitmapFactory来解码Bitmap就行。</p>
@@ -443,6 +444,7 @@
 </blockquote>
 <p>最终结果如下：</p>
 <p><img src="https://ww2.sinaimg.cn/large/006tKfTcly1fiz64a15bvj31401z4drv.jpg" alt=""></p>
+<h2 id="好啦，今天就聊到这里，如果您看完本文有收获？欢迎您关注我的公众号：小码哥在线-文章会第一时间在公众号发布"><a href="#好啦，今天就聊到这里，如果您看完本文有收获？欢迎您关注我的公众号：小码哥在线-文章会第一时间在公众号发布" class="headerlink" title="好啦，今天就聊到这里，如果您看完本文有收获？欢迎您关注我的公众号：小码哥在线 文章会第一时间在公众号发布"></a>好啦，今天就聊到这里，如果您看完本文有收获？欢迎您关注我的公众号：小码哥在线 文章会第一时间在公众号发布</h2><p><strong>我会定期发布自己在工作中遇到的经典Bug，和大家一起学习一起进步。 我主要是做Android FrameWork开发的，当然工作之余也自己写一些App玩耍，希望能帮助大家了解更多的Android FrameWork和Android应用开发的相关知识，从上向下搞定Android系统。</strong><br><img src="https://ww2.sinaimg.cn/large/006tKfTcly1fiy19tqg2uj30hs0b4gne.jpg" alt=""></p>
 
       
     </div>
@@ -673,7 +675,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#高效加载Large-Bitmaps"><span class="nav-number">1.</span> <span class="nav-text">高效加载Large Bitmaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加载Bitmap进内存"><span class="nav-number">2.</span> <span class="nav-text">加载Bitmap进内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那么如何优化呢？"><span class="nav-number">3.</span> <span class="nav-text">那么如何优化呢？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BitmapFactory-Options"><span class="nav-number">3.1.</span> <span class="nav-text">BitmapFactory.Options</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减少内存占用"><span class="nav-number">3.2.</span> <span class="nav-text">减少内存占用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减小图片磁盘占用"><span class="nav-number">3.3.</span> <span class="nav-text">减小图片磁盘占用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#高效加载Large-Bitmaps"><span class="nav-number">1.</span> <span class="nav-text">高效加载Large Bitmaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加载Bitmap进内存"><span class="nav-number">2.</span> <span class="nav-text">加载Bitmap进内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那么如何优化呢？"><span class="nav-number">3.</span> <span class="nav-text">那么如何优化呢？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BitmapFactory-Options"><span class="nav-number">3.1.</span> <span class="nav-text">BitmapFactory.Options</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减少内存占用"><span class="nav-number">3.2.</span> <span class="nav-text">减少内存占用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减小图片磁盘占用"><span class="nav-number">3.3.</span> <span class="nav-text">减小图片磁盘占用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#好啦，今天就聊到这里，如果您看完本文有收获？欢迎您关注我的公众号：小码哥在线-文章会第一时间在公众号发布"><span class="nav-number">4.</span> <span class="nav-text">好啦，今天就聊到这里，如果您看完本文有收获？欢迎您关注我的公众号：小码哥在线 文章会第一时间在公众号发布</span></a></li></ol></div>
             
 
           </div>
