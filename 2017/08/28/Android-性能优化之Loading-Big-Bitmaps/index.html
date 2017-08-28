@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Android应用开发,性能优化,Bitmap," />
 
 
 
@@ -95,16 +95,20 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="高效加载Large Bitmaps加载大Bitmaps到内存中，总是会有各种各样的问题，我们在开发过程中，经常会遇到因为图片资源过大导致OOM。我们应该始终留意在Android中每一个应用占用的内存大小是有上限的，过了这个上限，系统就回报OOM，用户体验非常差。 今天我们就聊一聊如何加载Large Bitmaps，了解以下它具体是如何工作的。  这篇文章只是用来聊一聊加载Bitmaps图片时的优">
+<meta name="keywords" content="Android应用开发,性能优化,Bitmap">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/06/18/hello-world/index.html">
+<meta property="og:title" content="Android 性能优化之Loading Big Bitmaps">
+<meta property="og:url" content="http://yoursite.com/2017/08/28/Android-性能优化之Loading-Big-Bitmaps/index.html">
 <meta property="og:site_name" content="被你发现啦 ^_^">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-06-19T02:05:53.000Z">
+<meta property="og:description" content="高效加载Large Bitmaps加载大Bitmaps到内存中，总是会有各种各样的问题，我们在开发过程中，经常会遇到因为图片资源过大导致OOM。我们应该始终留意在Android中每一个应用占用的内存大小是有上限的，过了这个上限，系统就回报OOM，用户体验非常差。 今天我们就聊一聊如何加载Large Bitmaps，了解以下它具体是如何工作的。  这篇文章只是用来聊一聊加载Bitmaps图片时的优">
+<meta property="og:image" content="https://ww2.sinaimg.cn/large/006tKfTcly1fiz4q2o73mj31jk0r1dni.jpg">
+<meta property="og:image" content="https://ww2.sinaimg.cn/large/006tKfTcly1fiz64a15bvj31401z4drv.jpg">
+<meta property="og:updated_time" content="2017-08-28T01:14:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Android 性能优化之Loading Big Bitmaps">
+<meta name="twitter:description" content="高效加载Large Bitmaps加载大Bitmaps到内存中，总是会有各种各样的问题，我们在开发过程中，经常会遇到因为图片资源过大导致OOM。我们应该始终留意在Android中每一个应用占用的内存大小是有上限的，过了这个上限，系统就回报OOM，用户体验非常差。 今天我们就聊一聊如何加载Large Bitmaps，了解以下它具体是如何工作的。  这篇文章只是用来聊一聊加载Bitmaps图片时的优">
+<meta name="twitter:image" content="https://ww2.sinaimg.cn/large/006tKfTcly1fiz4q2o73mj31jk0r1dni.jpg">
 
 
 
@@ -132,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/18/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/28/Android-性能优化之Loading-Big-Bitmaps/"/>
 
 
 
 
 
-  <title>Hello World | 被你发现啦 ^_^</title>
+  <title>Android 性能优化之Loading Big Bitmaps | 被你发现啦 ^_^</title>
   
 
 
@@ -296,7 +300,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/18/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/28/Android-性能优化之Loading-Big-Bitmaps/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="uestcfei">
@@ -313,7 +317,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">Android 性能优化之Loading Big Bitmaps</h1>
         
 
         <div class="post-meta">
@@ -325,8 +329,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-18T17:16:44+08:00">
-                2017-06-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-28T08:23:52+08:00">
+                2017-08-28
               </time>
             
 
@@ -336,6 +340,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android应用开发/" itemprop="url" rel="index">
+                    <span itemprop="name">Android应用开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -343,7 +369,7 @@
 
           
           
-             <span id="/2017/06/18/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+             <span id="/2017/08/28/Android-性能优化之Loading-Big-Bitmaps/" class="leancloud_visitors" data-flag-title="Android 性能优化之Loading Big Bitmaps">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -371,15 +397,51 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a><br><a id="more"></a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p><img src="https://ww2.sinaimg.cn/large/006tKfTcly1fiz4q2o73mj31jk0r1dni.jpg" alt=""></p>
+<h2 id="高效加载Large-Bitmaps"><a href="#高效加载Large-Bitmaps" class="headerlink" title="高效加载Large Bitmaps"></a>高效加载Large Bitmaps</h2><p>加载大Bitmaps到内存中，总是会有各种各样的问题，我们在开发过程中，经常会遇到因为图片资源过大导致OOM。我们应该始终留意在Android中每一个应用占用的内存大小是有上限的，过了这个上限，系统就回报OOM，用户体验非常差。</p>
+<p>今天我们就聊一聊如何加载<strong>Large Bitmaps</strong>，了解以下它具体是如何工作的。</p>
+<blockquote>
+<p>这篇文章只是用来聊一聊加载Bitmaps图片时的优化原理，但是我还是推荐你直接使用<strong><em>Piacaso</em></strong>或者<strong><em>Glide</em></strong>来加载图片，因为它们已经在底层帮我们优化好了，没有必要重复造轮子。</p>
+</blockquote>
+<h2 id="加载Bitmap进内存"><a href="#加载Bitmap进内存" class="headerlink" title="加载Bitmap进内存"></a>加载Bitmap进内存</h2><p>这非常简单，你需要使用BitmapFactory来解码Bitmap就行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.hqimage);</div><div class="line">imageView.setImageBitmap(bitmap);</div></pre></td></tr></table></figure>
+<p>看起来一切正常，但实际上这里有一个很严重的问题，我们可以先查看以下加载进来的Bitmap占用的内存大小。</p>
+<p><strong><em>Bitmap.getByteCount()</em></strong>方法可以返回它的大小。使用这个方法获取到最终在内存中的大小是：<strong>12262248</strong>Bytes,相当于是12.3MB。看到这里，你可能会疑惑了，为什么我在磁盘上看到的文件大小是3.5MB，而使用<strong><em>getByteCount()</em></strong>方法加载到内存中来了之后就大了这么多呢？原因如下：</p>
+<blockquote>
+<p>图片存储在磁盘上的时候，是经过了压缩的(一般是使用JPG，PNG等格式)，你一旦加载图片进内存，图片就不再有压缩的效果了。</p>
+<p>另外图片加载进内存，Android系统是要根据不同的手机分辨率来进行适配的，这个操作也会导致内存占用增加，具体怎么适配，我后面会单独开一篇文章来讲解。</p>
+</blockquote>
+<h2 id="那么如何优化呢？"><a href="#那么如何优化呢？" class="headerlink" title="那么如何优化呢？"></a>那么如何优化呢？</h2><ul>
+<li>提前获取图片大小，此时不加载进内存</li>
+<li>计算图片缩放因子</li>
+<li>加载图片进内存，此时使用缩放因子进行缩放，内存占用会减少</li>
+</ul>
+<h3 id="BitmapFactory-Options"><a href="#BitmapFactory-Options" class="headerlink" title="BitmapFactory.Options"></a>BitmapFactory.Options</h3><p>我们可以使用这个类来获取图片的大小，此时图片并没有真正加载进内存。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">BitmapFactory.Options options = new BitmapFactory.Options();</div><div class="line">options.inJustDecodeBounds = true;</div><div class="line">BitmapFactory.decodeResource(getResources(), R.mipmap.hqimage, options);</div></pre></td></tr></table></figure>
+<p>可以看到在传递<strong><em>BitmapFactory.Options</em></strong>实例到<strong><em>BitmapFactory.decodeSource()</em></strong>方法之前，我们把<strong>inJustDecodeBounds</strong>参数设置成了ture。<strong> inJustDecodeBounds</strong>参数的含义就是：只获取图片的信息（宽高等），而不真正加载图片进内存。</p>
+<p>当我们把相关信息打印出来后，可以看到如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">options.outHeight : 1126</div><div class="line">options.outWidth : 2000</div><div class="line">options.bitmap : null</div></pre></td></tr></table></figure>
+<p>bitmap为null，证明图片没有加载进内存，而此时我们拿到了图片的宽高信息（这很重要）。</p>
+<h3 id="减少内存占用"><a href="#减少内存占用" class="headerlink" title="减少内存占用"></a>减少内存占用</h3><p>现在我们可以去计算<strong>inSampleSize</strong>了，关于<strong>inSampleSize</strong>，其实就是一个采样率指数，采样率低了，我们最终的内存占用就回降低了。例如我们的原图是1000x1000的，<strong>inSampleSize</strong>设置为2，你们最终加载进内存的图片就是500x500。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">BitmapFactory.Options options = new BitmapFactory.Options();</div><div class="line">options.inJustDecodeBounds = true;</div><div class="line">options.inSampleSize = 3; </div><div class="line">BitmapFactory.decodeResource(getResources(), R.mipmap.hqimage, options);</div></pre></td></tr></table></figure>
+<p>这样就OK了？ Too young啊，我们不可能设置一个写死固定的<strong>inSampleSize</strong>值，而是要根据最终的图标大小来计算这个参数的值。</p>
+<p>计算<strong>inSampleSize</strong>的算法取决于你自己的业务逻辑，你可以根据需要编写自己的算法，下面给出一个Google官方的算法，仅供参考：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">public static int calculateInSampleSize(</div><div class="line">            BitmapFactory.Options options, int reqWidth, int reqHeight) &#123;</div><div class="line">    // Raw height and width of image</div><div class="line">    final int height = options.outHeight;</div><div class="line">    final int width = options.outWidth;</div><div class="line">    int inSampleSize = 1;</div><div class="line"></div><div class="line">    if (height &gt; reqHeight || width &gt; reqWidth) &#123;</div><div class="line"></div><div class="line">        final int halfHeight = height / 2;</div><div class="line">        final int halfWidth = width / 2;</div><div class="line"></div><div class="line">        // Calculate the largest inSampleSize value that is a power of 2 and keeps both</div><div class="line">        // height and width larger than the requested height and width.</div><div class="line">        while ((halfHeight / inSampleSize) &gt;= reqHeight</div><div class="line">                &amp;&amp; (halfWidth / inSampleSize) &gt;= reqWidth) &#123;</div><div class="line">            inSampleSize *= 2;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return inSampleSize;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>其中的<strong>reqWidth</strong>和<strong>reqHeight</strong>参数是目标图片大小。</p>
+<p>然后我们要设置<strong>inJustDecodeBounds</strong>为false，这次要真正加载如内存了，示例代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">options.inSampleSize = calculateInSampleSize(options, 500,500);</div><div class="line">options.inJustDecodeBounds = false;</div><div class="line">Bitmap smallBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.hqimage, options);</div></pre></td></tr></table></figure>
+<p>现在，我们再使用<strong><em>bitmap.getByteCount()</em></strong>方法获取大小为3.1MB，我们成功的将内存占用从12.3MB降低到了3.1MB！</p>
+<h3 id="减小图片磁盘占用"><a href="#减小图片磁盘占用" class="headerlink" title="减小图片磁盘占用"></a>减小图片磁盘占用</h3><p>除了能减小图片的内存占用，我们还能压缩Bitmap，减小图片在磁盘上的占用大小。</p>
+<p>首先，不进行压缩优化处理。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ByteArrayOutputStream bos = new ByteArrayOutputStream();</div><div class="line">bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bos);</div><div class="line">byte[] bitmapdata = bos.toByteArray();</div></pre></td></tr></table></figure>
+<p>此时可以发现磁盘上的图片大小为1.6MB，然后进行优化处理，修改<strong>compress()</strong>的参数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bitmap.compress(Bitmap.CompressFormat.JPEG, 50, bos);</div></pre></td></tr></table></figure>
+<p>重新查看大小，这次是24.4KB，我们成功的将图片的磁盘占用从1.6MB降低到了24.4KB！</p>
+<blockquote>
+<p>注意：压缩的格式只能是JPEG，不能是PNG</p>
+</blockquote>
+<p>最终结果如下：</p>
+<p><img src="https://ww2.sinaimg.cn/large/006tKfTcly1fiz64a15bvj31401z4drv.jpg" alt=""></p>
 
       
     </div>
@@ -407,6 +469,16 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Android应用开发/" rel="tag"># Android应用开发</a>
+          
+            <a href="/tags/性能优化/" rel="tag"># 性能优化</a>
+          
+            <a href="/tags/Bitmap/" rel="tag"># Bitmap</a>
+          
+        </div>
+      
 
       
       
@@ -416,15 +488,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/08/26/使Android-Studio更高效的几款插件/" rel="next" title="使Android Studio更高效的几款插件">
+                <i class="fa fa-chevron-left"></i> 使Android Studio更高效的几款插件
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/18/大学生网站合集整理/" rel="prev" title="大学生网站合集整理">
-                大学生网站合集整理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -600,7 +672,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#高效加载Large-Bitmaps"><span class="nav-number">1.</span> <span class="nav-text">高效加载Large Bitmaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加载Bitmap进内存"><span class="nav-number">2.</span> <span class="nav-text">加载Bitmap进内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那么如何优化呢？"><span class="nav-number">3.</span> <span class="nav-text">那么如何优化呢？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BitmapFactory-Options"><span class="nav-number">3.1.</span> <span class="nav-text">BitmapFactory.Options</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减少内存占用"><span class="nav-number">3.2.</span> <span class="nav-text">减少内存占用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减小图片磁盘占用"><span class="nav-number">3.3.</span> <span class="nav-text">减小图片磁盘占用</span></a></li></ol></li></ol></div>
             
 
           </div>

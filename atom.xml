@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-27T02:38:06.000Z</updated>
+  <updated>2017-08-28T01:14:46.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,14 +16,86 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Android 性能优化之Loading Big Bitmaps</title>
+    <link href="http://yoursite.com/2017/08/28/Android-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8BLoading-Big-Bitmaps/"/>
+    <id>http://yoursite.com/2017/08/28/Android-性能优化之Loading-Big-Bitmaps/</id>
+    <published>2017-08-28T00:23:52.000Z</published>
+    <updated>2017-08-28T01:14:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ww2.sinaimg.cn/large/006tKfTcly1fiz4q2o73mj31jk0r1dni.jpg" alt=""></p>
+<h2 id="高效加载Large-Bitmaps"><a href="#高效加载Large-Bitmaps" class="headerlink" title="高效加载Large Bitmaps"></a>高效加载Large Bitmaps</h2><p>加载大Bitmaps到内存中，总是会有各种各样的问题，我们在开发过程中，经常会遇到因为图片资源过大导致OOM。我们应该始终留意在Android中每一个应用占用的内存大小是有上限的，过了这个上限，系统就回报OOM，用户体验非常差。</p>
+<p>今天我们就聊一聊如何加载<strong>Large Bitmaps</strong>，了解以下它具体是如何工作的。</p>
+<blockquote>
+<p>这篇文章只是用来聊一聊加载Bitmaps图片时的优化原理，但是我还是推荐你直接使用<strong><em>Piacaso</em></strong>或者<strong><em>Glide</em></strong>来加载图片，因为它们已经在底层帮我们优化好了，没有必要重复造轮子。</p>
+</blockquote>
+<h2 id="加载Bitmap进内存"><a href="#加载Bitmap进内存" class="headerlink" title="加载Bitmap进内存"></a>加载Bitmap进内存</h2><p>这非常简单，你需要使用BitmapFactory来解码Bitmap就行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.hqimage);</div><div class="line">imageView.setImageBitmap(bitmap);</div></pre></td></tr></table></figure>
+<p>看起来一切正常，但实际上这里有一个很严重的问题，我们可以先查看以下加载进来的Bitmap占用的内存大小。</p>
+<p><strong><em>Bitmap.getByteCount()</em></strong>方法可以返回它的大小。使用这个方法获取到最终在内存中的大小是：<strong>12262248</strong>Bytes,相当于是12.3MB。看到这里，你可能会疑惑了，为什么我在磁盘上看到的文件大小是3.5MB，而使用<strong><em>getByteCount()</em></strong>方法加载到内存中来了之后就大了这么多呢？原因如下：</p>
+<blockquote>
+<p>图片存储在磁盘上的时候，是经过了压缩的(一般是使用JPG，PNG等格式)，你一旦加载图片进内存，图片就不再有压缩的效果了。</p>
+<p>另外图片加载进内存，Android系统是要根据不同的手机分辨率来进行适配的，这个操作也会导致内存占用增加，具体怎么适配，我后面会单独开一篇文章来讲解。</p>
+</blockquote>
+<h2 id="那么如何优化呢？"><a href="#那么如何优化呢？" class="headerlink" title="那么如何优化呢？"></a>那么如何优化呢？</h2><ul>
+<li>提前获取图片大小，此时不加载进内存</li>
+<li>计算图片缩放因子</li>
+<li>加载图片进内存，此时使用缩放因子进行缩放，内存占用会减少</li>
+</ul>
+<h3 id="BitmapFactory-Options"><a href="#BitmapFactory-Options" class="headerlink" title="BitmapFactory.Options"></a>BitmapFactory.Options</h3><p>我们可以使用这个类来获取图片的大小，此时图片并没有真正加载进内存。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">BitmapFactory.Options options = new BitmapFactory.Options();</div><div class="line">options.inJustDecodeBounds = true;</div><div class="line">BitmapFactory.decodeResource(getResources(), R.mipmap.hqimage, options);</div></pre></td></tr></table></figure>
+<p>可以看到在传递<strong><em>BitmapFactory.Options</em></strong>实例到<strong><em>BitmapFactory.decodeSource()</em></strong>方法之前，我们把<strong>inJustDecodeBounds</strong>参数设置成了ture。<strong> inJustDecodeBounds</strong>参数的含义就是：只获取图片的信息（宽高等），而不真正加载图片进内存。</p>
+<p>当我们把相关信息打印出来后，可以看到如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">options.outHeight : 1126</div><div class="line">options.outWidth : 2000</div><div class="line">options.bitmap : null</div></pre></td></tr></table></figure>
+<p>bitmap为null，证明图片没有加载进内存，而此时我们拿到了图片的宽高信息（这很重要）。</p>
+<h3 id="减少内存占用"><a href="#减少内存占用" class="headerlink" title="减少内存占用"></a>减少内存占用</h3><p>现在我们可以去计算<strong>inSampleSize</strong>了，关于<strong>inSampleSize</strong>，其实就是一个采样率指数，采样率低了，我们最终的内存占用就回降低了。例如我们的原图是1000x1000的，<strong>inSampleSize</strong>设置为2，你们最终加载进内存的图片就是500x500。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">BitmapFactory.Options options = new BitmapFactory.Options();</div><div class="line">options.inJustDecodeBounds = true;</div><div class="line">options.inSampleSize = 3; </div><div class="line">BitmapFactory.decodeResource(getResources(), R.mipmap.hqimage, options);</div></pre></td></tr></table></figure>
+<p>这样就OK了？ Too young啊，我们不可能设置一个写死固定的<strong>inSampleSize</strong>值，而是要根据最终的图标大小来计算这个参数的值。</p>
+<p>计算<strong>inSampleSize</strong>的算法取决于你自己的业务逻辑，你可以根据需要编写自己的算法，下面给出一个Google官方的算法，仅供参考：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">public static int calculateInSampleSize(</div><div class="line">            BitmapFactory.Options options, int reqWidth, int reqHeight) &#123;</div><div class="line">    // Raw height and width of image</div><div class="line">    final int height = options.outHeight;</div><div class="line">    final int width = options.outWidth;</div><div class="line">    int inSampleSize = 1;</div><div class="line"></div><div class="line">    if (height &gt; reqHeight || width &gt; reqWidth) &#123;</div><div class="line"></div><div class="line">        final int halfHeight = height / 2;</div><div class="line">        final int halfWidth = width / 2;</div><div class="line"></div><div class="line">        // Calculate the largest inSampleSize value that is a power of 2 and keeps both</div><div class="line">        // height and width larger than the requested height and width.</div><div class="line">        while ((halfHeight / inSampleSize) &gt;= reqHeight</div><div class="line">                &amp;&amp; (halfWidth / inSampleSize) &gt;= reqWidth) &#123;</div><div class="line">            inSampleSize *= 2;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return inSampleSize;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>其中的<strong>reqWidth</strong>和<strong>reqHeight</strong>参数是目标图片大小。</p>
+<p>然后我们要设置<strong>inJustDecodeBounds</strong>为false，这次要真正加载如内存了，示例代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">options.inSampleSize = calculateInSampleSize(options, 500,500);</div><div class="line">options.inJustDecodeBounds = false;</div><div class="line">Bitmap smallBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.hqimage, options);</div></pre></td></tr></table></figure>
+<p>现在，我们再使用<strong><em>bitmap.getByteCount()</em></strong>方法获取大小为3.1MB，我们成功的将内存占用从12.3MB降低到了3.1MB！</p>
+<h3 id="减小图片磁盘占用"><a href="#减小图片磁盘占用" class="headerlink" title="减小图片磁盘占用"></a>减小图片磁盘占用</h3><p>除了能减小图片的内存占用，我们还能压缩Bitmap，减小图片在磁盘上的占用大小。</p>
+<p>首先，不进行压缩优化处理。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ByteArrayOutputStream bos = new ByteArrayOutputStream();</div><div class="line">bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bos);</div><div class="line">byte[] bitmapdata = bos.toByteArray();</div></pre></td></tr></table></figure>
+<p>此时可以发现磁盘上的图片大小为1.6MB，然后进行优化处理，修改<strong>compress()</strong>的参数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bitmap.compress(Bitmap.CompressFormat.JPEG, 50, bos);</div></pre></td></tr></table></figure>
+<p>重新查看大小，这次是24.4KB，我们成功的将图片的磁盘占用从1.6MB降低到了24.4KB！</p>
+<blockquote>
+<p>注意：压缩的格式只能是JPEG，不能是PNG</p>
+</blockquote>
+<p>最终结果如下：</p>
+<p><img src="https://ww2.sinaimg.cn/large/006tKfTcly1fiz64a15bvj31401z4drv.jpg" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://ww2.sinaimg.cn/large/006tKfTcly1fiz4q2o73mj31jk0r1dni.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;高效加载Large-Bitmaps&quot;&gt;&lt;a href=&quot;#高效加载Large-B
+    
+    </summary>
+    
+      <category term="Android应用开发" scheme="http://yoursite.com/categories/Android%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Android应用开发" scheme="http://yoursite.com/tags/Android%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="性能优化" scheme="http://yoursite.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+      <category term="Bitmap" scheme="http://yoursite.com/tags/Bitmap/"/>
+    
+  </entry>
+  
+  <entry>
     <title>使Android Studio更高效的几款插件</title>
     <link href="http://yoursite.com/2017/08/26/%E4%BD%BFAndroid-Studio%E6%9B%B4%E9%AB%98%E6%95%88%E7%9A%84%E5%87%A0%E6%AC%BE%E6%8F%92%E4%BB%B6/"/>
     <id>http://yoursite.com/2017/08/26/使Android-Studio更高效的几款插件/</id>
     <published>2017-08-26T07:34:22.000Z</published>
-    <updated>2017-08-27T02:38:06.000Z</updated>
+    <updated>2017-08-27T03:00:02.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://ww1.sinaimg.cn/large/006tNc79ly1fivo9z4gfhj314009m0tk.jpg" alt=""></p>
-<p>Android Studio是一个非常强大的工具。它可以为多种不同的设备设计UI界面，使用起来非常灵活。我们可以在布局编辑器中拖放view和widget，并用xml对具体的细节进行定制编码。它在代码编辑，调试和性能分析的过程中都是很好用的一款工具。通过一下的几个插件，我们可以让Android Studio变得更加好用。</p>
+<p>Android Studio是一个非常强大的工具。它可以为多种不同的设备设计UI界面，使用起来非常灵活。我们可以在布局编辑器中拖放view和widget，并用xml对具体的细节进行定制编码。它在代码编辑，调试和性能分析的过程中都是很好用的一款工具。通过以下的几个插件，我们可以让Android Studio变得更加好用。</p>
 <p>安装插件：</p>
 <blockquote>
 <p>在Preferences -&gt; Plugins中搜索</p>
@@ -81,7 +153,7 @@
     <summary type="html">
     
       &lt;p&gt;&lt;img src=&quot;https://ww1.sinaimg.cn/large/006tNc79ly1fivo9z4gfhj314009m0tk.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Android Studio是一个非常强大的工具。它可以为多种不同的设备设计UI界面，使用起来非常灵活。我们可以在布局编辑器中拖放view和widget，并用xml对具体的细节进行定制编码。它在代码编辑，调试和性能分析的过程中都是很好用的一款工具。通过一下的几个插件，我们可以让Android Studio变得更加好用。&lt;/p&gt;
+&lt;p&gt;Android Studio是一个非常强大的工具。它可以为多种不同的设备设计UI界面，使用起来非常灵活。我们可以在布局编辑器中拖放view和widget，并用xml对具体的细节进行定制编码。它在代码编辑，调试和性能分析的过程中都是很好用的一款工具。通过以下的几个插件，我们可以让Android Studio变得更加好用。&lt;/p&gt;
 &lt;p&gt;安装插件：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在Preferences -&amp;gt; Plugins中搜索&lt;/p&gt;
@@ -95,9 +167,9 @@
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
-      <category term="Android Studio" scheme="http://yoursite.com/tags/Android-Studio/"/>
-    
       <category term="Android应用开发" scheme="http://yoursite.com/tags/Android%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="Android Studio" scheme="http://yoursite.com/tags/Android-Studio/"/>
     
       <category term="插件" scheme="http://yoursite.com/tags/%E6%8F%92%E4%BB%B6/"/>
     
